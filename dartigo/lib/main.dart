@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.space_dashboard_sharp),
               onPressed: () {},
-            )
+            ),
           ],
           leading: IconButton(
             icon: Icon(Icons.menu),
@@ -26,8 +26,6 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color.fromARGB(206, 237, 122, 156),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Align(
               alignment: Alignment.topCenter,
@@ -39,7 +37,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(25.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -78,27 +76,38 @@ class MyApp extends StatelessWidget {
                 ],
               ),
             ),
+            Card(
+              elevation: 0,
+              child: ElevatedButton.icon(
+                icon: Icon(Icons.shopping_cart),
+                label: Text('Buy Now'),
+                onPressed: () {
+                  print("next page");
+                  style:
+                  ElevatedButton.styleFrom(
+                    primary: Colors.red, // Set the background color to red
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
     );
   }
+}
 
-  Widget buildBulletPoint(String text) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(right: 8.0),
-          child: Icon(
-            Icons.brightness_1,
-            size: 10,
-          ),
-        ),
-        Expanded(
-          child: Text(text),
-        ),
-      ],
-    );
-  }
+Widget buildBulletPoint(String text) {
+  return Row(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Icon(
+        Icons.brightness_1,
+        size: 10,
+      ),
+      Expanded(
+        child: Text(text),
+      ),
+    ],
+  );
 }
