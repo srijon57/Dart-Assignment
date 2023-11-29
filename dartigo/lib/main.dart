@@ -38,10 +38,67 @@ class MyApp extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            // Add other widgets below the image if needed
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Ajazz-AK820',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    '৳4,000.00',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.green,
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    'Product Feature Description:',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  buildBulletPoint('81 Keys, Compact Layout'),
+                  buildBulletPoint('Gasket-mounted & Sound Dampening Foams'),
+                  buildBulletPoint(
+                      'South-Facing LED Orientation & 1.6M RGB Backlighting'),
+                  buildBulletPoint(
+                      'PBT Keycaps in OEM Profile & Ajazz Custom Switches'),
+                  buildBulletPoint('Type-C Wired Connectivity'),
+                  buildBulletPoint('1-Year Official Warranty'),
+                ],
+              ),
+            ),
           ],
         ),
       ),
+    );
+  }
+
+  Widget buildBulletPoint(String text) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(right: 8.0),
+          child: Icon(
+            Icons.brightness_1,
+            size: 10,
+          ),
+        ),
+        Expanded(
+          child: Text(text),
+        ),
+      ],
     );
   }
 }
