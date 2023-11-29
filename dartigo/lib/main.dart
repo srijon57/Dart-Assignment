@@ -1,7 +1,8 @@
+import 'package:firstly/page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(home: (MyApp())));
 }
 
 class MyApp extends StatelessWidget {
@@ -82,10 +83,9 @@ class MyApp extends StatelessWidget {
                 icon: Icon(Icons.shopping_cart),
                 label: Text('Buy Now'),
                 onPressed: () {
-                  print("next page");
-                  style:
-                  ElevatedButton.styleFrom(
-                    primary: Colors.red, // Set the background color to red
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BuyNowPage()),
                   );
                 },
               ),
