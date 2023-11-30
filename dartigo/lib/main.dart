@@ -1,7 +1,8 @@
+import 'package:firstly/page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(home: (MyApp())));
 }
 
 class MyApp extends StatelessWidget {
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Ajazz-AK820',
+                    'Ajazz-AK820 Keyboard',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
                     '৳4,000.00',
                     style: TextStyle(
                       fontSize: 18,
-                      color: Colors.green,
+                      color: Color.fromARGB(255, 49, 151, 53),
                     ),
                   ),
                   SizedBox(height: 8),
@@ -76,16 +77,16 @@ class MyApp extends StatelessWidget {
                 ],
               ),
             ),
+            Spacer(),
             Card(
               elevation: 0,
               child: ElevatedButton.icon(
                 icon: Icon(Icons.shopping_cart),
                 label: Text('Buy Now'),
                 onPressed: () {
-                  print("next page");
-                  style:
-                  ElevatedButton.styleFrom(
-                    primary: Colors.red, // Set the background color to red
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BuyNowPage()),
                   );
                 },
               ),
