@@ -11,6 +11,7 @@ class _BuyNowPageState extends State<BuyNowPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color.fromARGB(255, 240, 207, 217),
       appBar: AppBar(
         title: Text('Buy Now'),

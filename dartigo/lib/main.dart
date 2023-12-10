@@ -9,9 +9,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Color.fromARGB(255, 240, 207, 217),
         appBar: AppBar(
+          backgroundColor: Color.fromARGB(206, 237, 122, 156),
           title: Text("Tech-Mania"),
           centerTitle: true,
           actions: <Widget>[
@@ -24,7 +27,6 @@ class MyApp extends StatelessWidget {
             icon: Icon(Icons.menu),
             onPressed: () {},
           ),
-          backgroundColor: Color.fromARGB(206, 237, 122, 156),
         ),
         body: Column(
           children: [
@@ -38,7 +40,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(25.0),
+              padding: const EdgeInsets.all(30.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
